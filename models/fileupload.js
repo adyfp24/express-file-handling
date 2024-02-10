@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   FileUpload.init({
-    fileName: DataTypes.STRING,
-    fileType: DataTypes.STRING,
-    filePath: DataTypes.STRING
+    file_name: DataTypes.STRING,
+    file_type: DataTypes.STRING,
+    file_path: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'FileUpload',

@@ -9,13 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fileName: {
+      file_name: {
         type: Sequelize.STRING
       },
-      fileType: {
+      file_type: {
         type: Sequelize.STRING
       },
-      filePath: {
+      file_path: {
         type: Sequelize.STRING
       },
       createdAt: {
