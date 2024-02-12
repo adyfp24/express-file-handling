@@ -1,10 +1,18 @@
 const path = require('path');
 const File = require('../models').FileUpload;
 
-const getFile = (req, res) => {
-    const fileName = 'file-1707660058995-Frame 4.png'; 
-    const filePath = path.join(__dirname, '../uploads', fileName);
-    
+const getAllFiles = (req, res) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
+
+const getFile = async (req, res) => {
+    const id = req.params.id;
+    const fileName = await File.findOne({where : {id}}); 
+    const filePath = path.join(__dirname, '../uploads', fileName.file_path);
     return res.download(filePath, fileName, (err)=>{
         if(err){
             res.status(404).send('file gagal diunduh');
