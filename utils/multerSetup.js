@@ -1,11 +1,13 @@
 const multer = require('multer');
-
+const timestamp = Date.now();
+const date = new Date(timestamp);
+const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads/');
     },
     filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + '-' + file.originalname;
+        const uniqueSuffix = formattedDate + '-' + file.originalname;
         cb(null, file.fieldname + '-' + uniqueSuffix);
     }
 })
